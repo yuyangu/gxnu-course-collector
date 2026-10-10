@@ -218,3 +218,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# ================= 本项目补充规则 =================
+# ⚠ config.json 含学号等个人信息，切勿提交（用 config.example.json 作模板）
+config.json
+
+# Obsidian 同步产生的运行时状态（自动生成，无需入库）
+schedule_state.json
+ingested.json
+sync_log.jsonl
+
+# 采集器导出的课表快照（含真实姓名，勿入库）
+course-schedule-*.json
+*.mhtml
