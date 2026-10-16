@@ -1,8 +1,8 @@
 # GXNU 课表采集器
 
-> ⚠️ **2026-10-16 起，「课表采集器」油猴脚本已迁移**至
-> [yuyangu/userscripts](https://github.com/yuyangu/userscripts) 统一维护。
-> 安装 / 更新请访问新仓库；本仓库保留 Python 同步脚本与文档（下方「同步脚本」部分仍然适用）。
+> ⚠️ **2026-10-16 起，本项目已整体迁移**至
+> [yuyangu/userscripts](https://github.com/yuyangu/userscripts)（课表采集器脚本 + 同步脚本统一维护）。
+> 安装 / 更新请访问新仓库；本仓库仅作历史归档，不再更新。
 
 把**广西师范大学**教务系统的课表，同步成 Obsidian 可读的 Markdown 笔记。
 
