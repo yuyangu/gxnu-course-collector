@@ -1,5 +1,9 @@
 # GXNU 课表采集器
 
+> ⚠️ **2026-10-16 起，「课表采集器」油猴脚本已迁移**至
+> [yuyangu/userscripts](https://github.com/yuyangu/userscripts) 统一维护。
+> 安装 / 更新请访问新仓库；本仓库保留 Python 同步脚本与文档（下方「同步脚本」部分仍然适用）。
+
 把**广西师范大学**教务系统的课表，同步成 Obsidian 可读的 Markdown 笔记。
 
 包含两部分：
@@ -38,7 +42,7 @@
 1. 给浏览器装 [Tampermonkey](https://www.tampermonkey.net/) 扩展
 2. 打开下面的链接，Tampermonkey 会自动弹出安装页 → 点「安装」
 
-   **[⬇ 点此安装 GXNU 课表采集器](https://cdn.jsdelivr.net/gh/yuyangu/gxnu-course-collector@main/gxnu-course-collector.user.js)**
+   **[⬇ 点此安装 GXNU 课表采集器](https://raw.githubusercontent.com/yuyangu/userscripts/main/gxnu-course-collector.user.js)**
 
 3. 打开课表页，右下角出现「📚 课表采集器」面板 → 点「采集并导出课表」
 4. 浏览器下载 `course-schedule-*.json` 到默认下载目录
@@ -91,39 +95,25 @@ Obsidian Vault 路径默认取 `~/Documents/Obsidian Vault`，
 脚本头部已内置更新地址，Tampermonkey 会**每天自动检查一次**更新：
 
 ```
-// @updateURL    https://cdn.jsdelivr.net/gh/yuyangu/gxnu-course-collector@main/gxnu-course-collector.user.js
-// @downloadURL  https://cdn.jsdelivr.net/gh/yuyangu/gxnu-course-collector@main/gxnu-course-collector.user.js
+// @updateURL    https://raw.githubusercontent.com/yuyangu/userscripts/main/gxnu-course-collector.user.js
+// @downloadURL  https://raw.githubusercontent.com/yuyangu/userscripts/main/gxnu-course-collector.user.js
 ```
 
 手动检查：Tampermonkey 面板 → 已安装脚本 → 点「检查更新」。
 
-### ⚠ 关于 CDN 缓存
+### ⚠ 关于更新地址（2026-10-16 迁移后）
 
-上游走的是 **jsDelivr**（国内访问比 `raw.githubusercontent.com` 稳定），
-代价是**分支引用最长有约 12 小时缓存** —— 脚本刚更新时，CDN 可能仍返回旧版。
-
-两个办法：
-
-1. **主动刷新缓存**（秒级生效）：
-
-   ```bash
-   curl https://purge.jsdelivr.net/gh/yuyangu/gxnu-course-collector@main/gxnu-course-collector.user.js
-   ```
-
-2. **换用官方 raw 地址**（实时，但国内可能连不上）。把脚本头部两行改为：
-
-   ```
-   // @updateURL    https://raw.githubusercontent.com/yuyangu/gxnu-course-collector/main/gxnu-course-collector.user.js
-   // @downloadURL  https://raw.githubusercontent.com/yuyangu/gxnu-course-collector/main/gxnu-course-collector.user.js
-   ```
+脚本已迁移至 [yuyangu/userscripts](https://github.com/yuyangu/userscripts)，
+更新地址改为 **raw.githubusercontent.com 直连**（实时生效，无 CDN 缓存延迟）。
+Tampermonkey 会自动检查更新；也可在面板手动点「检查更新」。
 
 ### 发布新版本（维护者）
 
-1. 改脚本 → **把 `@version` 递增**（如 `1.7.0` → `1.7.1`）
-2. 提交并推送
-3. 执行上面的 `purge` 命令刷新 CDN 缓存
+1. 改脚本 → **递增 `@version`**（如 `1.7.1` → `1.7.2`）
+2. 上传到 userscripts 仓库
+3. 用户端 Tampermonkey「检查更新」即可收到
 
-> ⚠ 不改 `@version`，Tampermonkey 不会认为有新版本，更新功能形同虚设。
+> ⚠ 不改 `@version`，Tampermonkey 不会认为有新版本。
 
 ---
 
@@ -131,8 +121,7 @@ Obsidian Vault 路径默认取 `~/Documents/Obsidian Vault`，
 
 ```
 .
-├── gxnu-course-collector.user.js   # 油猴脚本（单文件、无混淆）
-├── 安装说明.md                      # 详细安装与排错
+├── 安装说明.md                      # 详细安装与排错（采集器已迁往 userscripts）
 ├── README.md
 ├── LICENSE
 └── sync/
